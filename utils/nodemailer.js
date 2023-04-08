@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 let transport = nodemailer.createTransport({
   host: "",
@@ -19,15 +19,7 @@ transport.verify((err, success) => {
  * Sends formatted email to specified address
  * @param {to, subject, text, url} payload parameters to pass into mailOption
  */
-export default async function sendMail(payload) {
-  let mailOption = {
-    from: "",
-    to: payload.to,
-    subject: payload.subject,
-    text: payload.text,
-    html: `<p>html</p>`,
-  };
-
+export default async function sendMail(mailOption) {
   transport.sendMail(mailOption, (err, info) => {
     if (err) {
       // Log/handle error

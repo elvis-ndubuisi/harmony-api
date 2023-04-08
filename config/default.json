@@ -1,5 +1,8 @@
 {
   "cors": {
     "uptownstudio": "https://uptownstudios.com.ng"
+  },
+  "mails": {
+    "uptown": "uptownstudios01@gmail.com"
   }
 }

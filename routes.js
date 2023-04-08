@@ -2,7 +2,10 @@ import config from "config";
 import cors from "cors";
 import express from "express";
 
-import { contactUptown, bookSession } from "./controllers/uptown.controllers";
+import {
+  contactUptown,
+  bookSession,
+} from "./controllers/uptown.controllers.js";
 
 const router = express.Router();
 
