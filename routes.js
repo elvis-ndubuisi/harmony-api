@@ -2,22 +2,26 @@ import config from "config";
 import cors from "cors";
 import express from "express";
 
+import { contactUptown, bookSession } from "./controllers/uptown.controllers";
+
 const router = express.Router();
 
+/** Send contact and message to updownstudio
+ * Uptownstudio receives email message
+ */
 router.post(
   "/upt/contact",
   cors({ origin: config.get("cors.uptownstudio") }),
-  (req, res) => {
-    res.send("send mail");
-  }
+  contactUptown
 );
 
+/** Book a session from uptownstudio website
+ * Uptownstudio receives email message
+ */
 router.post(
   "/upt/session",
   cors({ origin: config.get("cors.uptownstudio") }),
-  (req, res) => {
-    res.send("session");
-  }
+  bookSession
 );
 
 router.get("/health", (req, res) => {
