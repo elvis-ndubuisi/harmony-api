@@ -2,7 +2,7 @@ import cors from "cors";
 import config from "config";
 import express from "express";
 
-import uptownRoutes from "./uptown.routes";
+import uptownRoutes from "./uptown.routes.js";
 
 const router = express.Router();
 
