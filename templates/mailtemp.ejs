@@ -2,7 +2,31 @@
 <section
   style="margin: 0 auto; max-width: 720px; padding: 30px 0; font-family: Arial"
 >
-  <h3>Hello, <%= receiver %></h3>
-  <p><%= message %></p>
+  <h3>Message from <%= name %>, with email address: <%= email %></h3>
+  <% if (type === "contact") { %>
+  <p><%= message.subject %></p>
+  <p><%= message.message %></p>
+  <% } %>
+  <br />
+  <% if (type === "booking") { %>
+  <p><%= name %> booked a session. Find details below.</p>
+  <ul>
+    <li style="display: flex; flex-direction: row; gap: 10px">
+      <span>Phone No:</span> <%= message.number %>
+    </li>
+    <li style="display: flex; flex-direction: row; gap: 10px">
+      <span>Service:</span> <%= message.service %>
+    </li>
+    <li style="display: flex; flex-direction: row; gap: 10px">
+      <span>Time:</span> <%= message.time %>
+    </li>
+    <li style="display: flex; flex-direction: row; gap: 10px">
+      <span>Date:</span> <%= message.date %>
+    </li>
+    <li style="display: flex; flex-direction: row; gap: 10px">
+      <span>Email Address:</span> <%= message.email %>
+    </li>
+  </ul>
+  <% } %>
 </section>
 <%- include('./includes/footer.ejs') -%>

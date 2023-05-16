@@ -29,8 +29,10 @@ export default async function sendMail(payload) {
   ejs.renderFile(
     path.resolve("templates", "mailtemp.ejs"),
     {
-      receiver: "Uptown Recording Studio",
-      header: "Message from me",
+      header: "Uptown Recording Studio",
+      name: payload.name,
+      email: payload.email,
+      type: payload.type,
       message: payload.message,
     },
     (err, data) => {
@@ -56,13 +58,4 @@ export default async function sendMail(payload) {
       }
     }
   );
-  // transport.sendMail(mailOption, (err, info) => {
-  //   if (err) {
-  //     // Log/handle error
-  //     logger.error(`Mail Error: ${err}`);
-  //     return;
-  //   }
-  //   // Log/handle success
-  //   logger.debug(`Message sent:  ${info.messageId}`);
-  // });
 }
