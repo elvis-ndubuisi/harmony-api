@@ -7,7 +7,7 @@ import uptownRoutes from "./uptown.routes.js";
 const router = express.Router();
 
 router.use(
-  "/uptown",
+  "/api/uptown",
   cors({ origin: config.get("origins.uptownstudio") }),
   uptownRoutes
 );
