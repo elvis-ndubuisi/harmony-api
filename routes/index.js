@@ -13,11 +13,7 @@ router.use(
   cors({ origin: config.get("origins.uptownstudio") }),
   uptownRoutes
 );
-router.use(
-  "/api/aircab",
-  cors({ origin: config.get("origins.aircabservices") }),
-  aircabRoutes
-);
+router.use("/api/aircab", cors({ origin: "*" }), aircabRoutes);
 router.get("/health", (_, res) => {
   res.sendStatus(200);
 });
