@@ -35,7 +35,7 @@ router.post("/contact", async (req, res) => {
   try {
     const { data, error } = await resend.emails.send({
       from: `${email}`,
-      to: "info@aircabservices.com",
+      to: ["info@aircabservices.com"],
       subject: `Contact Form Submission from ${first_name}`,
       html: `<p><strong>Name:</strong> ${first_name} ${last_name}</p>
       <p><strong>Email:</strong> ${email}</p>
