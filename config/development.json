@@ -1,9 +1,11 @@
 {
   "port": 5000,
   "origins": {
-    "uptownstudio": "https://uptownstudios.com.ng"
+    "uptownstudio": "https://uptownstudios.com.ng",
+    "aircabservices": "https://aircabservices.com"
   },
   "emails": {
-    "uptownstudio": "waltzmidas@gmail.com"
+    "uptownstudio": "waltzmidas@gmail.com",
+    "aircabservices": "contact@aircabservices.com"
   }
 }

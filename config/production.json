@@ -1,7 +1,8 @@
 {
   "port": 8080,
   "origins": {
-    "uptownstudio": "https://uptownstudios.com.ng"
+    "uptownstudio": "https://uptownstudios.com.ng",
+    "aircabservices": "https://aircabservices.com"
   },
   "emails": {
     "uptownstudio": "uptownstudios01@gmail.com"

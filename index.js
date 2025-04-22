@@ -13,4 +13,4 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(router);
 
-app.listen(config.get("port") || 8080, () => logger.info("💥 Server started"));
+app.listen(8080, () => logger.info("💥 Server started"));

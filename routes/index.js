@@ -1,8 +1,10 @@
 import cors from "cors";
 import config from "config";
 import express from "express";
+import { Resend } from "resend";
 
 import uptownRoutes from "./uptown.routes.js";
+import aircabRoutes from "./aircab.route.js";
 
 const router = express.Router();
 
@@ -11,7 +13,11 @@ router.use(
   cors({ origin: config.get("origins.uptownstudio") }),
   uptownRoutes
 );
-
+router.use(
+  "/api/aircab",
+  cors({ origin: config.get("origins.aircabservices") }),
+  aircabRoutes
+);
 router.get("/health", (_, res) => {
   res.sendStatus(200);
 });
